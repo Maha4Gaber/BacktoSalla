@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Comments as ResourcesComments;
 use App\Models\Comments;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CommentsController extends Controller
 {
@@ -13,7 +15,12 @@ class CommentsController extends Controller
     public function index()
     {
         //
-        return "Maha";
+        $Products = Comments::all();
+        return response()->json([
+            'message' => 'Ok',
+            'status' => Response::HTTP_OK,
+            'data' => ResourcesComments::collection($Products)
+        ]);
     }
 
     /**
