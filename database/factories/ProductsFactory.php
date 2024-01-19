@@ -23,7 +23,7 @@ class ProductsFactory extends Factory
             'decs' => fake()->sentence(),
             'img' => fake()->numberBetween(1,6),
             'price' => fake()->numberBetween(30,2000),
-            'star' => fake()->numberBetween(0,5),
+            'star' => fake()->numberBetween(1,5),
             'quantity'=>fake()->numberBetween(0,1000),
             'paragraph'=>fake()->paragraph(),
             'color'=>fake()->word(),
