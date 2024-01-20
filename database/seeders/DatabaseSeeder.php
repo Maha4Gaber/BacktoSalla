@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Blog;
 use App\Models\Categories;
 use App\Models\Comments;
 use App\Models\Products;
@@ -25,5 +26,6 @@ class DatabaseSeeder extends Seeder
         Categories::factory(10)->create();
         Products::factory(150)->create();
         Comments::factory(1000)->create();
+        Blog::factory(3)->create();
     }
 }

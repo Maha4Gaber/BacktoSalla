@@ -19,8 +19,13 @@ class Comments extends JsonResource
             'id' => $this->id,
             'comment' => $this->comment,
             'name' => $this->name,
+            'desc' => $this->desc,
+            'img' => $this->img,
+            'star' => $this->star,
             'email' => $this->email,
             'product_id' => $this->product_id,
+            'created_at'=>$this->created_at,
+            'updated_at'=>$this->updated_at,
         ];
     }
 }

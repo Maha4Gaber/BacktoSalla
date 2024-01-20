@@ -21,6 +21,9 @@ class CommentsFactory extends Factory
             'comment' => fake()->paragraph(),
             'name' => fake()->name(),
             'email' => fake()->email(),
+            'desc' => fake()->sentence(),
+            'img' => fake()->numberBetween(1,6),
+            'star' => fake()->numberBetween(1,5),
             'product_id' => function () {
                 return Products::all()->random();
             }

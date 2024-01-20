@@ -17,8 +17,10 @@ return new class extends Migration
             $table->string('decs');
             $table->integer('img');
             $table->integer('price');
+            $table->integer('offer');
             $table->integer('star');
             $table->integer('quantity');
+            $table->integer('soled');
             $table->longText('paragraph');
             $table->string('color');
             $table->string('wire');
