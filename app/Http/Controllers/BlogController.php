@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Blog as ResourcesBlog;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BlogController extends Controller
 {
@@ -12,6 +14,11 @@ class BlogController extends Controller
      */
     public function index()
     {
+        return response()->json([
+            'message' => 'Ok',
+            'status' => Response::HTTP_OK,
+            'data' => ResourcesBlog::collection(Blog::all())
+        ]);
         //
     }
 

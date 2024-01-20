@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProductsController;
@@ -24,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('/Categories', CategoriesController::class);
 Route::apiResource('/Products', ProductsController::class);
 Route::apiResource('/comments', CommentsController::class);
+Route::apiResource('/blog', BlogController::class);
 Route::get('/popular', [ProductsController::class, 'popular']);
 Route::get('/newest', [ProductsController::class, 'newest']);
 Route::get('/Pcomments/{id}', [ProductsController::class, 'Pcomments']);
