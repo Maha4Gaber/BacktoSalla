@@ -18,6 +18,7 @@ class CategoriesFactory extends Factory
     {
         return [
             'name' => fake()->word(),
+            'img' => fake()->numberBetween(1,10),
             //
         ];
     }

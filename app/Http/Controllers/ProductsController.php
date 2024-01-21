@@ -37,15 +37,16 @@ class ProductsController extends Controller
     }
     public function newest()
     {
-        $products = Products::orderBy('created_at', 'desc')->offset(0)->limit(10)->get();
+        $products = Products::orderBy('created_at', 'desc')->offset(0)->limit(20)->get();
         
         return response()->json([
             'message' => 'Ok',
             'status' => Response::HTTP_OK,
-            'data' => $products
+            'data' => ProductsResource::collection($products)
         ]);
         # code...
     }
+    
     public function Pcomments($id)
     {
         $comments = Comments::all()->where('product_id',$id);
@@ -57,6 +58,17 @@ class ProductsController extends Controller
         # code...
     }
 
+    public function offered()
+    {
+        $products = Products::orderBy('offer', 'desc')->offset(0)->limit(10)->get();
+        
+        return response()->json([
+            'message' => 'Ok',
+            'status' => Response::HTTP_OK,
+            'data' => $products
+        ]);
+        # code...
+    }
     /**
      * Show the form for creating a new resource.
      */

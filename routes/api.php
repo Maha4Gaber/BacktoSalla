@@ -28,4 +28,6 @@ Route::apiResource('/comments', CommentsController::class);
 Route::apiResource('/blog', BlogController::class);
 Route::get('/popular', [ProductsController::class, 'popular']);
 Route::get('/newest', [ProductsController::class, 'newest']);
+Route::get('/review', [CommentsController::class, 'review']);
+Route::get('/offered', [ProductsController::class, 'offered']);
 Route::get('/Pcomments/{id}', [ProductsController::class, 'Pcomments']);

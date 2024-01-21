@@ -15,11 +15,21 @@ class CommentsController extends Controller
     public function index()
     {
         //
-        $Products = Comments::all();
+        $Comments = Comments::all();
         return response()->json([
             'message' => 'Ok',
             'status' => Response::HTTP_OK,
-            'data' => ResourcesComments::collection($Products)
+            'data' => ResourcesComments::collection($Comments)
+        ]);
+    }
+    public function review()
+    {
+        $Comments = Comments::orderBy('star', 'desc')->offset(0)->limit(3)->get();
+        
+        return response()->json([
+            'message' => 'Ok',
+            'status' => Response::HTTP_OK,
+            'data' => ResourcesComments::collection($Comments)
         ]);
     }
 

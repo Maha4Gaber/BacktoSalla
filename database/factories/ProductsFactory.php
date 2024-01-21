@@ -21,7 +21,7 @@ class ProductsFactory extends Factory
             //
             'name' => fake()->word(),
             'decs' => fake()->sentence(),
-            'img' => fake()->numberBetween(1,6),
+            'img' => fake()->numberBetween(1,20),
             'price' => fake()->numberBetween(30,2000),
             'offer' => fake()->numberBetween(5,50),            
             'star' => fake()->numberBetween(1,5),

@@ -18,11 +18,11 @@ class CommentsFactory extends Factory
     public function definition(): array
     {
         return [
-            'comment' => fake()->paragraph(),
+            'comment' => fake()->sentence(),
             'name' => fake()->name(),
             'email' => fake()->email(),
             'desc' => fake()->sentence(),
-            'img' => fake()->numberBetween(1,6),
+            'img' => fake()->numberBetween(1,3),
             'star' => fake()->numberBetween(1,5),
             'product_id' => function () {
                 return Products::all()->random();
